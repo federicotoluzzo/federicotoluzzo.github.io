@@ -2,11 +2,7 @@
 <html>
   <head>
     <title>1337</title>
-    <style>
-    body{
-      background: #19053F;
-    }
-    </style>
+    <link rel="stylesheet" href="home.css">
   </head>
   <body>
     <h1>Hello, World!</h1>
