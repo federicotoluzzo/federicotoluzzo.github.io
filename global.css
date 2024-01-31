@@ -18,12 +18,13 @@ code {
 }
 
 a {
-    border-bottom: 1px solid #CCF;
+    border-bottom: 0.1vh solid #CCF;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 20%;
     color: #CCF;
     text-decoration: none;
-    transition: border-bottom-left-radius 400ms, border-bottom-right-radius 400ms;
+    font-size: 2vh;
+    transition: border-bottom-left-radius 300ms, border-bottom-right-radius 300ms;
 }
 
 a:hover {
@@ -35,13 +36,26 @@ nav{
     margin-inline: auto;
 }
 
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
 li{
     display: inline-block;
     margin-inline: auto;
-    margin: 50px;
+    text-shadow: 0 0 0 #CCCCFF;
+    transition: text-shadow 300ms;
 }
+li:hover{
+    text-shadow: 0 0 25px #DFCFDF;
+}
+
 h1{
-    font-size: 69px;
+    font-size: 5vh;
     text-shadow: 0 0 20px #000;
 }
 
