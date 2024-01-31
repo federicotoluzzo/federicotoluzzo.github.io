@@ -7,10 +7,9 @@ body{
 
 body {
     margin: 5% auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.8;
-    text-shadow: 0 1px 0 #ffffff;
     max-width: 73%;
 }
 
@@ -19,12 +18,17 @@ code {
 }
 
 a {
-    border-bottom: 1px solid #444444;
-    color: #444444;
+    border-bottom: 1px solid #CCF;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 20%;
+    color: #CCF;
     text-decoration: none;
+    transition: border-bottom-left-radius 400ms, border-bottom-right-radius 400ms;
 }
+
 a:hover {
-    border-bottom: 0;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 0;
 }
 
 nav{
@@ -35,4 +39,8 @@ li{
     display: inline-block;
     margin-inline: auto;
     margin: 50px;
+}
+h1{
+    font-size: 69px;
+    text-shadow: 0 0 20px #000;
 }
