@@ -7,5 +7,4 @@ function animateHeader(header){
         setTimeout(function(){header.innerHTML = HEADER.substring(0, i) + "|"}, i*250);
     }
     setTimeout(function(){setInterval(function(){header.innerHTML = HEADER + ((header.innerHTML.charAt(header.innerHTML.length - 1) === "|") ? "&#9646" : "|")}, 530)}, HEADER.length*250);
-
 }
