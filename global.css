@@ -62,3 +62,10 @@ h1{
 footer{
     text-align: center;
 }
+
+.bubble{
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(76,9,121,1) 31%, rgba(203,156,254,1) 100%);
+}

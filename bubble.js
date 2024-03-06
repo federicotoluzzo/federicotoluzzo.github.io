@@ -1,25 +1,28 @@
-export class Bubble extends HTMLDivElement{
+export class Bubble{
+    static lastID = 0;
+    id;
     size;
     height;
+    bubble;
 
-    constructor(size){
-        super();
+    constructor(size, parent = document.getElementsByClassName("body")[0]){
+        this.bubble = document.createElement("div");
+        this.id = Bubble.lastID++;
+        this.bubble.id = this.id;
         this.size = size;
-        this.style.aspectRatio = "1";
-        this.style.width = this.size.toString() + "px";
-        this.style.borderRadius = "50%";
-        this.style.background = "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(76,9,121,1) 31%, rgba(203,156,254,1) 100%)";
-        this.style.filter = "blur(" + Math.abs(this.size - 25) / 5 + "px)";
+        this.bubble.size = size;
+        this.bubble.className = "bubble"
+        this.bubble.style.width = this.size + "px";
+        this.bubble.style.left = Math.random() * (window.outerWidth - this.size) + "px";
+        this.bubble.style.filter = "blur(" + Math.abs(this.size - 25) / 5 + "px)";
         this.height = window.outerHeight;
-        float();
+        parent.appendChild(this.bubble);
+        setTimeout(this.float(), 1/60.0);
     }
-
     float(){
-        setInterval(
-            function() {
-                this.height -= (50 - this.size);
-                this.style.top = this.height;
-        });
+        this.bubble = document.getElementById(this.id);
+        this.height -= (50 - this.size);
+        this.bubble.style.top = this.height + "px";
+        console.log(this.bubble);
     }
-
 }
