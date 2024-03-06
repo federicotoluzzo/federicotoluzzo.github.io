@@ -16,7 +16,7 @@ export class Bubble{
         this.bubble.className = "bubble"
         this.bubble.style.width = this.size + "px";
         this.bubble.style.left = Math.random() * (window.outerWidth - this.size) + "px";
-        this.bubble.style.filter = "blur(" + Math.abs(this.size - 25) / 5 + "px)";
+        this.bubble.style.filter = "blur(" + Math.abs(this.size - 25) / 3 + "px)";
         this.height = window.outerHeight;
         this.bubble.style.top = this.height + "px";
         this.bubble.style.zIndex = (Math.floor(this.size / 10) - 3);
@@ -30,7 +30,7 @@ export class Bubble{
         if(this.height < -this.size){
             this.parent.removeChild(this.bubble);
         }
-        this.height -= (this.size)/10;
+        this.height -= 69/(60 - this.size);
         this.bubble.style.top = this.height + "px";
     }
 }
