@@ -69,3 +69,11 @@ footer{
     border-radius: 50%;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(76,9,121,1) 31%, rgba(203,156,254,1) 100%);
 }
+
+.follower{
+    position: absolute;
+    width: 20px;
+    border-radius: 50%;
+    background: #CCCCFF;
+    border: 2px solid #19053F;
+}
