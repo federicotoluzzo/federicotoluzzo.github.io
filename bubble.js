@@ -5,7 +5,7 @@ export class Bubble{
     height;
     bubble;
     parent;
-
+    interval;
     constructor(size, parent = document.getElementsByClassName("body")[0]){
         this.parent = parent;
         this.bubble = document.createElement("div");
@@ -23,12 +23,13 @@ export class Bubble{
         parent.appendChild(this.bubble);
         this.bubble = document.getElementById(this.id);
         //setInterval(this.float, 1000/60);
-        setInterval(() => this.float(), 1000 / 60);
+        this.interval = setInterval(() => this.float(), 1000 / 60);
     }
     float(){
         console.log(this.parent);
         if(this.height < -this.size){
             this.parent.removeChild(this.bubble);
+            clearInterval(interval);
         }
         this.height -= 69/(60 - this.size);
         this.bubble.style.top = this.height + "px";
