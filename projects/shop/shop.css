@@ -10,7 +10,7 @@ h1{
     background-size: 100%;
     background-repeat: repeat;
     background-clip: text;
-    color: #00000000;
+    color: transparent;
     text-shadow: none;
     text-align: center;
     display: block;
@@ -24,4 +24,8 @@ canvas{
     margin-inline: auto;
     border-radius: 10vh;
     box-shadow: 0 0 69px #000;
+}
+
+#renderer{
+    padding:10vw;
 }
