@@ -9,6 +9,7 @@ renderer.setSize(window.innerWidth < window.innerHeight ? window.innerWidth : wi
 document.body.appendChild(renderer.domElement);
 const loader = new GLTFLoader();
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.autoRotate = true;
 animate();
 function animate() {
     requestAnimationFrame(animate);
