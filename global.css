@@ -59,7 +59,10 @@ h1{
 }
 
 footer{
+    margin: 0;
     text-align: center;
+    background: #000;
+    opacity: 50%;
 }
 
 .bubble{
