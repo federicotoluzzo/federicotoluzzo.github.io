@@ -46,7 +46,7 @@ loader.load('3dpea.gltf', (gltf) => {
     scene.add(as);*/
 
     // Render the scene
-    renderer.setClearColor(0xeeeeee); // Light gray background color
+    renderer.setClearColor(0x19053F); // Light gray background color
     renderer.render(scene, camera);
     camera.lookAt( gltf.scene.position );
 }, undefined, (error) => {
