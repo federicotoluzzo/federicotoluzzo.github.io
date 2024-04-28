@@ -26,11 +26,13 @@ h2{
 }
 
 canvas{
-    margin-inline: auto;
-    border-radius: 5vh;
-    box-shadow: 0 0 69px #000;
 }
 
 #renderer{
+    width: fit-content;
+    height: fit-content;
+    margin-inline: auto;
+    border-radius: 5vh;
+    box-shadow: 0 0 69px #000;
     padding:5vw;
 }
