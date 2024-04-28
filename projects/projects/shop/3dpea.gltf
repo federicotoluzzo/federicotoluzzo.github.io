@@ -42,7 +42,7 @@
 					1
 				],
 				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"roughnessFactor":0.20000000298023224
 			}
 		}
 	],
@@ -65,23 +65,23 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":4509,
+			"count":4519,
 			"max":[
-				-1,
-				50.20595169067383,
-				25.078458786010742
+				37.626338958740234,
+				27.960411071777344,
+				26.89855194091797
 			],
 			"min":[
-				-77,
-				-4,
-				-29.76498031616211
+				-38.373661041259766,
+				-26.245540618896484,
+				-27.944887161254883
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":4509,
+			"count":4519,
 			"type":"VEC3"
 		},
 		{
@@ -94,26 +94,26 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":54108,
+			"byteLength":54228,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":54108,
-			"byteOffset":54108,
+			"byteLength":54228,
+			"byteOffset":54228,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":40776,
-			"byteOffset":108216,
+			"byteOffset":108456,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":148992,
+			"byteLength":149232,
 			"uri":"3dpea.bin"
 		}
 	]
