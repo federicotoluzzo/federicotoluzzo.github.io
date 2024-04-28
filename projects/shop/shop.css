@@ -1,5 +1,5 @@
 header{
-    padding: 100px;
+    padding: 5vh;
     align-items: center;
     align-content: center;
     vertical-align: center;
@@ -17,7 +17,12 @@ h1{
     font-weight: 900;
     font-family: "Raleway", Helvetica, Arial, SansSerif, serif;
     font-size: 10vh;
-    line-height: 1;
+    line-height: 80%;
+}
+h2{
+    text-align: center;
+    font-family: "Raleway", Helvetica, Arial, SansSerif, serif;
+    font-size: 5vh;
 }
 
 canvas{
