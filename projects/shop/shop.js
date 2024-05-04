@@ -30,6 +30,11 @@ function animate() {
 loader.load('3dpea.gltf', (gltf) => {
     // Add the loaded model to your scene
     const model = gltf.scene;
+    model.traverse((obj) => {
+        if (obj.isMesh) {
+            obj.material = new THREE.MeshStandardMaterial({ color: 0x004400 }); // Apply the new material to each mesh
+        }
+    });
     scene.add(model);
     // Position the camera to view the model
     camera.position.set(0, 0, 150); // Adjust as needed
