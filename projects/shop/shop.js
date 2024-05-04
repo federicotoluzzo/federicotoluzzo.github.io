@@ -1,24 +1,26 @@
-import * as THREE from 'three';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var THREE = require("three");
 // @ts-ignore
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+var GLTFLoader_js_1 = require("three/addons/loaders/GLTFLoader.js");
+var OrbitControls_js_1 = require("three/addons/controls/OrbitControls.js");
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+var renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth < window.innerHeight ? window.innerWidth * 0.8 : window.innerHeight * 0.8, window.innerWidth < window.innerHeight ? window.innerWidth * 0.8 : window.innerHeight * 0.8);
 document.getElementById("renderer").appendChild(renderer.domElement);
-const price = document.createElement("p");
+/*const price = document.createElement("p");
 price.className = "label";
-price.innerHTML = "&#x20AC 24.99";
+price.innerHTML = "&#x20AC 24.99";*/
 document.getElementById("renderer").appendChild(price);
-const checkout = document.createElement("a");
+var checkout = document.createElement("a");
 checkout.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 checkout.style.display = "block";
 checkout.className = "label";
 checkout.innerHTML = "&#x1F6D2";
 document.getElementById("renderer").appendChild(checkout);
-const loader = new GLTFLoader();
-const controls = new OrbitControls(camera, renderer.domElement);
+var loader = new GLTFLoader_js_1.GLTFLoader();
+var controls = new OrbitControls_js_1.OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 animate();
 function animate() {
@@ -27,10 +29,10 @@ function animate() {
     controls.update();
     renderer.render(scene, camera);
 }
-loader.load('3dpea.gltf', (gltf) => {
+loader.load('3dpea.gltf', function (gltf) {
     // Add the loaded model to your scene
-    const model = gltf.scene;
-    model.traverse((obj) => {
+    var model = gltf.scene;
+    model.traverse(function (obj) {
         if (obj.isMesh) {
             obj.material = new THREE.MeshStandardMaterial({ color: 0x082008 }); // Apply the new material to each mesh
         }
@@ -39,7 +41,7 @@ loader.load('3dpea.gltf', (gltf) => {
     // Position the camera to view the model
     camera.position.set(0, 0, 150); // Adjust as needed
     // Add lights if necessary
-    const ambientLight = new THREE.RectAreaLight(0xFFFFFF, 10);
+    var ambientLight = new THREE.RectAreaLight(0xFFFFFF, 10);
     ambientLight.position.set(-50, 70, 0);
     ambientLight.width = 1000;
     ambientLight.height = 1000;
@@ -53,7 +55,7 @@ loader.load('3dpea.gltf', (gltf) => {
     renderer.setClearColor(0x19053F); // Light gray background color
     renderer.render(scene, camera);
     camera.lookAt(gltf.scene.position);
-}, undefined, (error) => {
+}, undefined, function (error) {
     console.error('Error loading glTF model:', error);
 });
 /*
