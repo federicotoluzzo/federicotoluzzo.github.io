@@ -7,10 +7,10 @@ const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth < window.innerHeight ? window.innerWidth * 0.8 : window.innerHeight * 0.8, window.innerWidth < window.innerHeight ? window.innerWidth * 0.8 : window.innerHeight * 0.8);
 document.getElementById("renderer").appendChild(renderer.domElement);
-const price = document.createElement("p");
+/*const price = document.createElement("p");
 price.className = "label";
 price.innerHTML = "&#x20AC 24.99";
-document.getElementById("renderer").appendChild(price);
+document.getElementById("renderer").appendChild(price);*/
 const checkout = document.createElement("a");
 checkout.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 checkout.style.display = "block";
