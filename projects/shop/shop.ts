@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 // @ts-ignore
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// @ts-ignore
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
@@ -10,8 +11,8 @@ renderer.setSize( window.innerWidth < window.innerHeight ? window.innerWidth * 0
 document.getElementById("renderer").appendChild( renderer.domElement );
 /*const price = document.createElement("p");
 price.className = "label";
-price.innerHTML = "&#x20AC 24.99";*/
-document.getElementById("renderer").appendChild(price);
+price.innerHTML = "&#x20AC 24.99";
+document.getElementById("renderer").appendChild(price);*/
 const checkout = document.createElement("a");
 checkout.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 checkout.style.display = "block";

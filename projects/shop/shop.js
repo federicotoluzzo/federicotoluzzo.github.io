@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var THREE = require("three");
 // @ts-ignore
 var GLTFLoader_js_1 = require("three/addons/loaders/GLTFLoader.js");
+// @ts-ignore
 var OrbitControls_js_1 = require("three/addons/controls/OrbitControls.js");
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
@@ -11,8 +12,8 @@ renderer.setSize(window.innerWidth < window.innerHeight ? window.innerWidth * 0.
 document.getElementById("renderer").appendChild(renderer.domElement);
 /*const price = document.createElement("p");
 price.className = "label";
-price.innerHTML = "&#x20AC 24.99";*/
-document.getElementById("renderer").appendChild(price);
+price.innerHTML = "&#x20AC 24.99";
+document.getElementById("renderer").appendChild(price);*/
 var checkout = document.createElement("a");
 checkout.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 checkout.style.display = "block";
