@@ -15,7 +15,7 @@ const checkout = document.createElement("a");
 checkout.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 checkout.style.display = "block";
 checkout.className = "label";
-checkout.innerHTML = "Purchase &#x1F6D2";
+checkout.innerHTML = "&#x1F6D2";
 document.getElementById("renderer").appendChild(checkout);
 const loader = new GLTFLoader();
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -32,14 +32,14 @@ loader.load('3dpea.gltf', (gltf) => {
     const model = gltf.scene;
     model.traverse((obj) => {
         if (obj.isMesh) {
-            obj.material = new THREE.MeshStandardMaterial({ color: 0x004400 }); // Apply the new material to each mesh
+            obj.material = new THREE.MeshStandardMaterial({ color: 0x082008 }); // Apply the new material to each mesh
         }
     });
     scene.add(model);
     // Position the camera to view the model
     camera.position.set(0, 0, 150); // Adjust as needed
     // Add lights if necessary
-    const ambientLight = new THREE.RectAreaLight(0xFFFFFF, 1);
+    const ambientLight = new THREE.RectAreaLight(0xFFFFFF, 10);
     ambientLight.position.set(-50, 70, 0);
     ambientLight.width = 1000;
     ambientLight.height = 1000;
