@@ -8,55 +8,37 @@
 		{
 			"name":"Scene",
 			"nodes":[
-				2
+				0
 			]
 		}
 	],
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Portaorologio con il mio nome v1.001"
-		},
-		{
-			"children":[
-				0
+			"name":"Portaorologio canottieri",
+			"rotation":[
+				0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
 			],
-			"name":"Portaorologio con il mio nome v1"
-		},
-		{
-			"children":[
-				1
-			],
-			"name":"Node_2"
-		}
-	],
-	"materials":[
-		{
-			"doubleSided":true,
-			"name":"Mat_1",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.35153260827064514,
-					0.35153260827064514,
-					0.35153260827064514,
-					1
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.20000000298023224
-			}
+			"translation":[
+				39.75424575805664,
+				-21.13517189025879,
+				1.2580490112304688
+			]
 		}
 	],
 	"meshes":[
 		{
-			"name":"Mesh_0",
+			"name":"Portaorologio canottieri",
 			"primitives":[
 				{
 					"attributes":{
 						"POSITION":0,
 						"NORMAL":1
 					},
-					"indices":2,
-					"material":0
+					"indices":2
 				}
 			]
 		}
@@ -65,55 +47,55 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":4519,
+			"count":59598,
 			"max":[
-				37.626338958740234,
-				27.960411071777344,
-				26.89855194091797
+				-1,
+				25.07904624938965,
+				4
 			],
 			"min":[
-				-38.373661041259766,
-				-26.245540618896484,
-				-27.944887161254883
+				-77,
+				-29.760461807250977,
+				-50.20595169067383
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":4519,
+			"count":59598,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5123,
-			"count":20388,
+			"count":61416,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":54228,
+			"byteLength":715176,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":54228,
-			"byteOffset":54228,
+			"byteLength":715176,
+			"byteOffset":715176,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":40776,
-			"byteOffset":108456,
+			"byteLength":122832,
+			"byteOffset":1430352,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":149232,
+			"byteLength":1553184,
 			"uri":"3dpea.bin"
 		}
 	]
