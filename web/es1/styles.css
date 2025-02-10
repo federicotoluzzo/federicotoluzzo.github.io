@@ -11,6 +11,10 @@ body {
     align-self: center;
 }
 
+.full:hover{
+    display: none;
+}
+
 p {
     align-self: center;
     margin: auto;
