@@ -6,6 +6,7 @@
 }
 
 body{
+    margin: 0;
     font-family: "Geist", sans-serif;
     background-color: #000;
     color: var(--geist-foreground);
@@ -46,6 +47,7 @@ nav a{
 
 nav a:hover{
     color: #DDD;
+    cursor: pointer;
 }
 
 kbd{
@@ -55,6 +57,47 @@ kbd{
     border-radius: 6px;
     color: #FFF;
     border: 1px solid --gray-color;
+}
+
+button{
+    font-family: "Geist", sans-serif;
+    font-weight: 600;
+}
+
+main{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    top: 63px;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 128px;
+}
+
+h1{
+    margin: 0;
+    font-size: 60px;
+    color: linear-gradient(0deg, rgba(238,238,238,1) 35%, rgba(221,221,221,1) 100%);
+    text-align: center;
+    font-weight: 600;
+}
+
+h3{
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+p{
+    text-align: center;
+    color: rgb(161, 161, 161);
+    font-size: 16px;
+}
+
+.gray-thin-border{
+    border: 1px solid #222;
 }
 
 .br8{
@@ -72,3 +115,4 @@ kbd{
 .p14{
     padding: 14px;
 }
+
