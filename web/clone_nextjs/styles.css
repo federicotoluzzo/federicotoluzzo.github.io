@@ -22,13 +22,16 @@ header{
     top: 0;
     left: 0;
     width: 100vw;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     height: 63px;
     border-bottom: 1px solid #444;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+    background: #000C;
 }
 
 .over{
@@ -51,9 +54,13 @@ nav a:hover{
 }
 
 kbd{
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
     font-family: "Geist", sans-serif;
     font-size: 12px;
     padding-inline: 6px;
+    padding-block: 3px;
     border-radius: 6px;
     color: #FFF;
     border: 1px solid --gray-color;
@@ -97,7 +104,26 @@ p{
 }
 
 .gray-thin-border{
-    border: 1px solid #222;
+    border: 1px solid #333;
+}
+
+.gradient{
+    background: linear-gradient(0deg, hsla(0, 0%, 10%, 1) 0%, hsla(0, 0%, 0%, 1) 100%);
+}
+
+.card{
+    background: #FFF0;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 250ms;
+}
+
+.card:hover{
+    background: #FFFFFF08;
+}
+
+.square{
+    aspect-ratio: 1;
 }
 
 .br8{
