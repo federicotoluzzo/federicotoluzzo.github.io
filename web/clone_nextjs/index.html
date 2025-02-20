@@ -47,8 +47,8 @@
                 </nav>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div class="br8 p8" style="background-color: var(--gray-color); margin-inline: 5px;">
-                    <span style="color: var(--geist-secondary);">Search Documentation...</span>
+                <div class="br8 p8" style="background-color: var(--gray-color); margin-inline: 5px; display: flex; justify-content: space-between; width: 250px;">
+                    <span style="color: var(--geist-secondary); align-self: center">Search Documentation...</span>
                     <kbd class="gray-thin-border" style="color: var(--geist-foreground); background-color: var(--geist-background); border-color: #444;">CtrlK</kbd>
                 </div>
                 <button class="br8 p8 gray-thin-border" style="background: #000; color: #fff; margin-inline: 5px;">
@@ -62,17 +62,65 @@
             </div>
         </header>
         <main>
-            <h1>Start building with Next.js</h1>
-            <p>Go from beginner to expert by learning the foundations of Next.js and building <br> a fully functional demo website that uses all the latest features.</p>
-            <div style="border: 1px solid #222; border-radius: 16px; width: fit-content; height: fit-content; padding: 16px; margin-inline: auto; background: rgb(10, 10, 10); padding-inline: 250px; padding-bottom: 20px;">
-                <h3>Learn Next.js</h3>
-                <button class="br8 p8" style="background: #fff; color: #000; border: none; margin-inline: 5px;">
-                    <p style="margin: 0; color: #000; padding: 8px 25px;">Start Learning -></p>
-                </button>
+            <div class="gradient">
+                <h1>Start building with Next.js</h1>
+                <p>Go from beginner to expert by learning the foundations of Next.js and building <br> a fully functional demo website that uses all the latest features.</p>
+                <div style="border: 1px solid #222; border-radius: 16px; width: fit-content; height: fit-content; padding: 16px; margin-inline: auto; background: rgb(10, 10, 10); padding-inline: 250px; padding-bottom: 20px;">
+                    <h3>Learn Next.js</h3>
+                    <button class="br8 p8" style="background: #fff; color: #000; border: none; margin-inline: 5px;">
+                        <p style="margin: 0; color: #000; padding: 8px 25px;">Start Learning -></p>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; margin-inline: 30px; gap: 16px; margin-bottom: 100px;">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="gray-thin-border card square">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div class="gray-thin-border card">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div class="gray-thin-border card">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="gray-thin-border card square">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div class="gray-thin-border card">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div class="gray-thin-border card">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="gray-thin-border card square">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div class="gray-thin-border card">
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                        <div id="panel_container" class="gray-thin-border card" style="background: linear-gradient(110deg,#272727 .06%,#171717); box-shadow: inset 0 0 10px #FFF2;">
+                            <div id="panel"></div>
+                            <h3>Built-in Optimizations</h3>
+                            <p>Automatic Image, Font, and Script Optimizations for improved UX and Core Web Vitals.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>
 
         </footer>
+        <script src="panel.js"></script>
     </body>
 </html>
