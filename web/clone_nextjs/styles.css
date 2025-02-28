@@ -121,6 +121,15 @@ p{
 
 .card:hover{
     background: #FFFFFF08;
+    cursor: pointer;
+}
+
+.card h3{
+    text-align: left;
+}
+
+.card p{
+    text-align: left;
 }
 
 .square{

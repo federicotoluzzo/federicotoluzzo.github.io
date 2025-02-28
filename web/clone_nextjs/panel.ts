@@ -61,7 +61,8 @@ function blinkRandomStuff(){
     clearTimeout(refreshTimeout);
     for (let i = 0; i < 5; i++){
         for (let j = 0; j < 18; j++){
-            grid[i][j].style.transition = "all " + (200 + 50 * (i + j)) + "ms";
+            //grid[i][j].style.transition = "all " + (200 + 50 * (i + j)) + "ms";
+            grid[i][j].style.transition = "all " + 1000 + "ms";
             grid[i][j].style.background = "hsl(240, 100%, 25%)";
             grid[i][j].style.scale = "1";
         }
@@ -78,7 +79,7 @@ function writeNext(){
     clearInterval(blinkInterval);
     for (let i = 0; i < 5; i++){
         for (let j = 0; j < 18; j++){
-            grid[i][j].style.transition = "all " + (200 + 50 * (i + j)) + "ms";
+            grid[i][j].style.transition = "all " + (200 + 100 * (i + j)) + "ms";
             if(nextLEDs[i][j] == 1){
                 grid[i][j].style.background = "hsl(240, 100%, 75%)";
                 grid[i][j].style.scale = "2";
@@ -91,7 +92,7 @@ function writeNext(){
     refreshTimeout = setTimeout(() => {
         for (let i = 0; i < 5; i++){
             for (let j = 0; j < 18; j++){
-                grid[i][j].style.transition = "all " + (200 + 50 * (i + j)) + "ms";
+                grid[i][j].style.transition = "all " + (200 + 100 * (i + j)) + "mst";
                 if(nextLEDs[i][j] == 1){
                     grid[i][j].style.background = "hsl(240, 100%, 75%)";
                     grid[i][j].style.scale = "2";
