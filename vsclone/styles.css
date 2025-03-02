@@ -80,3 +80,44 @@ body{
 #theme:hover{
     background: #fff2;
 }
+
+#search{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #444;
+    border-radius: 4px;
+    height: fit-content;
+    padding: 7px 8px;
+    margin-inline: 12px;
+    align-self: center;
+}
+
+#search img{
+    align-self: center;
+    margin-inline: 8px;
+    height: 16px;
+}
+
+#search input{
+    background: transparent;
+    border: transparent;
+    color: #c3d0e5;
+}
+
+.blue-button{
+    align-self: center;
+    background: #0078d4;
+    color: #FFF;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 16px;
+    height: fit-content;
+}
+
+h1{
+    margin-top: 80px;
+    font-size: 72px;
+    color: #c3d0e5;
+    text-align: center;
+    letter-spacing: -0.8px;
+}
