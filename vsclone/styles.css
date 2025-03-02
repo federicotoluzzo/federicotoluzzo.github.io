@@ -1,4 +1,4 @@
-.nav{
+#nav{
     display: flex; /* non spiegato */
     flex-direction: row;
     align-content: center;
@@ -8,6 +8,16 @@
     left: 0;
     width: 100vw;
     height: 58px;
+}
+
+#nav ul li{
+    list-style: none;
+}
+
+#nav ul li a{
+    color: #9BA3B4;
+    font-family: Cantarell, sans-serif;;
+    text-decoration: none;
 }
 
 body{
