@@ -9,3 +9,8 @@
     width: 100vw;
     height: 58px;
 }
+
+body{
+    margin: 0;
+    background: #0D1117;
+}
