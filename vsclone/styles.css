@@ -105,13 +105,38 @@ body{
 }
 
 .blue-button{
+    display: inline-block;
     align-self: center;
     background: #0078d4;
     color: #FFF;
     font-weight: 600;
     border-radius: 4px;
-    padding: 8px 16px;
     height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+.blue-button:hover{
+    cursor: pointer;
+    background: #0058B4;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 4px;
+}
+
+.blue-button img{
+    width: 18px;
+    margin-right: 8px;
+}
+
+.blue-button p{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 0;
 }
 
 h1{
@@ -120,4 +145,20 @@ h1{
     color: #c3d0e5;
     text-align: center;
     letter-spacing: -0.8px;
+    margin-bottom: 25px;
+}
+
+#copilot{
+    margin-left: 8px;
+    font-size: 18px;
+    display: inline-block;
+    border: 1px solid #444444;
+    background: #222222;
+    border-radius: 4px;
+    padding-inline: 20px;
+}
+
+#copilot:hover{
+    background: #333;
+    cursor: pointer;
 }
