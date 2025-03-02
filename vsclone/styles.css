@@ -1,0 +1,6 @@
+.nav{
+    display: flex; /* non spiegato */
+    flex-direction: row;
+    align-content: center;
+    gap: 20px;
+}

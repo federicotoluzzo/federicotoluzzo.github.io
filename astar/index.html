@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>A* pathfinder</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="AIproject/js/Automaton.js"></script>
+        <script src="AIproject/js/Eviroment.js"></script>
+        <script src="AIproject/js/Obstacle.js"></script>
+        <script src="AIproject/js/State.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>A* pathfinder demonstration</h1>
+        </header>
+        <main>
+            <div id="settings">
+                <input id="size" min="2" max="32" type="number">
+                <input id="start" type="button" value="Start">
+            </div>
+            <br>
+            <div style="border-radius: 20px; padding: 20px; background: white">
+                <canvas id="canvas" height="420" width="420"></canvas>
+            </div>
+        </main>
+        <footer>
+            Federico Toluzzo
+        </footer>
+        <script>
+            document.getElementById("start").addEventListener("click", walkPath);
+            document.addEventListener("DOMContentLoaded", initCanvas);
+            document.getElementById("size").addEventListener("input", initCanvas);
+
+            const canvas = document.querySelector("canvas");
+            const sizeInput = document.querySelector("input");
+            const maxSize = 420;
+            let size;
+
+            function walkPath() {
+                const env = new Environment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
+                env.addObstacle(new Obstacle(3, 0, 1, 8));
+                env.addObstacle(new Obstacle(6, 2, 1, 8));
+                //env.addObstacle(new Obstacle(7, 0, 1, 8));
+                const automaton = new Automaton(0, 0, env, 9, 9);
+                const path = automaton.aStar();
+                initCanvas();
+                console.log(path)
+                for (let i = 0; i < path.length - 1; i++) {
+                    const context = canvas.getContext('2d');
+                    context.fillStyle = "#F00";
+                    context.fillRect(path[i].x * maxSize / size, path[i].y * maxSize / size, path[i].x === path[i + 1].x ? 2 : maxSize / size, path[i].y === path[i + 1].y ? 2 : maxSize / size);
+                }
+            }
+
+            //danke claudio
+            function initCanvas() { // Missing () after function name
+                const context = canvas.getContext('2d');
+                context.clearRect(0, 0, 420, 420);  // Missing semicolon
+                size = sizeInput.valueAsNumber;
+                console.log(size);
+
+                // gap and maxSize variables are used but not defined
+                const gap = 5; // Assuming a value, replace with your actual gap
+                const maxSize = 400; // Assuming a value, replace with your actual maxSize
+
+                for (let i = 0; i < size; i++) {
+                    for (let j = 0; j < size; j++) {
+                        // No need to get context again in each loop iteration
+                        context.fillStyle = "#DDD";
+                        context.fillRect(
+                            maxSize / (size - 1) * i,  // Modified for correct grid positioning
+                            maxSize / (size - 1) * j,  // Modified for correct grid positioning
+                            maxSize / (size - 1)  - gap,
+                            maxSize / (size - 1) - gap
+                        );  // Missing closing parenthesis
+                        //context.fillRect(50, 100 * i + 10 * i, 100, 100);
+                    }
+                }
+            }
+
+            /*
+            function initCanvas(){
+                const context = canvas.getContext('2d');
+                context.clearRect(0, 0, 420, 420)
+                const size = sizeInput.valueAsNumber;
+                for (let i = 0; i < size; i++) {
+                    for (let j = 0; j < size; j++) {
+                        const context = canvas.getContext('2d');
+                        context.fillStyle = "#DDD";
+                        context.fillRect(gap * (i + 1) + maxSize / size, gap * (j + 1) + maxSize / size, maxSize / size, maxSize / size;
+                        //context.fillRect(50, 100 * i + 10 * i, 100, 100);
+                    }
+                }
+
+            }*/
+        </script>
+    </body>
+</html>
