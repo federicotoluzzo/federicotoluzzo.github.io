@@ -192,3 +192,48 @@ body div video{
     width: 90vw;
     border-radius: 24px;
 }
+
+.pause{
+    margin-inline: auto;
+    width: fit-content;
+    margin-top: 140px;
+    padding: 8px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.pause:hover{
+    border: 2px solid #9BA3B4;
+    padding: 6px 20px;
+}
+
+#footer{
+    width: 100%;
+    height: 100px;
+    padding: 50px 50px;
+}
+
+#footer ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+#footer ul li:hover{
+    cursor: pointer;
+}
+
+#footer ul li img{
+    width: 25px;
+}
+
+#footer ul{
+    display: block;
+}
+
+#footer ul li a{
+    text-decoration: none;
+    color: #9BA3B4;
+}
