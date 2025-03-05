@@ -149,11 +149,7 @@
 
         <!-- Non abbiamo ancora fatto js, ma sembrava peccato non mettere questo -->
         <script>
-            const nav = document.getElementById("nav");
-
-            document.addEventListener("scroll", () => {
-                nav.style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";
-            });
+            document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
         </script>
     </body>
 </html>
