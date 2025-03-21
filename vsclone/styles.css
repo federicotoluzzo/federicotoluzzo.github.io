@@ -63,6 +63,7 @@ body{
     color: #9BA3B4;
     background: #0D1117;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 #theme{
