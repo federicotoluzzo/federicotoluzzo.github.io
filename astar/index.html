@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <title>A* pathfinder</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="AIproject/js/State.js"></script>
         <script src="AIproject/js/Automaton.js"></script>
         <script src="AIproject/js/Eviroment.js"></script>
         <script src="AIproject/js/Obstacle.js"></script>
-        <script src="AIproject/js/State.js"></script>
     </head>
     <body>
         <header>
@@ -19,8 +19,11 @@
                 <input id="start" type="button" value="Start">
             </div>
             <br>
-            <div style="border-radius: 20px; padding: 20px; background: white">
-                <canvas id="canvas" height="420" width="420"></canvas>
+            <div style="border-radius: 20px; padding: 20px; background: white;">
+                <div id="env">
+
+                </div>
+                <div id="automaton"></div>
             </div>
         </main>
         <footer>
@@ -28,71 +31,91 @@
         </footer>
         <script>
             document.getElementById("start").addEventListener("click", walkPath);
-            document.addEventListener("DOMContentLoaded", initCanvas);
-            document.getElementById("size").addEventListener("input", initCanvas);
+            document.addEventListener("DOMContentLoaded", initEnvironment);
+            document.getElementById("size").addEventListener("input", initEnvironment);
 
-            const canvas = document.querySelector("canvas");
             const sizeInput = document.querySelector("input");
-            const maxSize = 420;
             let size;
 
+            const automaton = document.getElementById("automaton");
+
+            const environment = document.getElementById("env");
+            let env = new Evironment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
+            let auto = new Automaton(0, 0, env, 9, 9);
+            env.addObstacle(new Obstacle(6, 2, 1, 8));
+            env.addObstacle(new Obstacle(3, 0, 1, 8));
             function walkPath() {
-                const env = new Environment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
-                env.addObstacle(new Obstacle(3, 0, 1, 8));
+                automaton.style.top = getPos(auto.initalX, auto.initialY).y + "px"
+                automaton.style.left = getPos(auto.initialX, auto.initialY).x + "px"
+                env = new Evironment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
                 env.addObstacle(new Obstacle(6, 2, 1, 8));
+                env.addObstacle(new Obstacle(3, 0, 1, 8));
+                auto = new Automaton(0, 0, env, size - 1, size - 1);
+                initEnvironment()
                 //env.addObstacle(new Obstacle(7, 0, 1, 8));
-                const automaton = new Automaton(0, 0, env, 9, 9);
-                const path = automaton.aStar();
-                initCanvas();
+                const path = auto.aStar();
                 console.log(path)
-                for (let i = 0; i < path.length - 1; i++) {
-                    const context = canvas.getContext('2d');
-                    context.fillStyle = "#F00";
-                    context.fillRect(path[i].x * maxSize / size, path[i].y * maxSize / size, path[i].x === path[i + 1].x ? 2 : maxSize / size, path[i].y === path[i + 1].y ? 2 : maxSize / size);
+                for (let i = 0; i < path.length; i++) {
+                    console.log("test")
+                    setTimeout(() => {
+                        console.log("debug")
+                        try{
+                            document.getElementById(path[i].x + " " + path[i].y).style.background = "#AFF"
+                        } catch {}
+                        automaton.style.top = getPos(path[i].x, path[i].y).y + "px"
+                        automaton.style.left = getPos(path[i].x, path[i].y).x + "px"
+                    }, i * 500);
                 }
             }
-
-            //danke claudio
-            function initCanvas() { // Missing () after function name
-                const context = canvas.getContext('2d');
-                context.clearRect(0, 0, 420, 420);  // Missing semicolon
-                size = sizeInput.valueAsNumber;
-                console.log(size);
-
-                // gap and maxSize variables are used but not defined
-                const gap = 5; // Assuming a value, replace with your actual gap
-                const maxSize = 400; // Assuming a value, replace with your actual maxSize
-
+            function initEnvironment(){
+                size = sizeInput.valueAsNumber
+                automaton.style.top = getPos(0, 0).y.toString() + "px";
+                automaton.style.left = getPos(0, 0).x.toString() + "px";
+                console.log(getPos(3, 1).y.toString() + "px")
+                console.log(getPos(3, 1).x.toString() + "px")
+                automaton.style.width = (320 / size).toString() + "px";
+                while (environment.children.length > 0){
+                    environment.removeChild(environment.children.item(0));
+                }
+                environment.style.display = "grid";
+                environment.style.gridTemplateColumns = "1fr ".repeat(size);
+                environment.style.gap = "1px";
+                environment.style.transition = "all 500ms linear"
                 for (let i = 0; i < size; i++) {
                     for (let j = 0; j < size; j++) {
-                        // No need to get context again in each loop iteration
-                        context.fillStyle = "#DDD";
-                        context.fillRect(
-                            maxSize / (size - 1) * i,  // Modified for correct grid positioning
-                            maxSize / (size - 1) * j,  // Modified for correct grid positioning
-                            maxSize / (size - 1)  - gap,
-                            maxSize / (size - 1) - gap
-                        );  // Missing closing parenthesis
-                        //context.fillRect(50, 100 * i + 10 * i, 100, 100);
+                        const square = document.createElement("div")
+                        square.className = "cell"
+                        square.id = j + " " + i;
+                        square.style.background = "#AAF"
+                        if (env.underObstacle(j, i)){
+                            square.style.background = "#FAA"
+                        }
+                        if(j === auto.initalX && i === auto.initialY){
+                            square.style.background = "#AFA"
+                        }
+                        if(j === auto.goalX && i === auto.goalY){
+                            square.style.background = "#AFA"
+                        }
+                        environment.appendChild(square);
                     }
                 }
             }
 
-            /*
-            function initCanvas(){
-                const context = canvas.getContext('2d');
-                context.clearRect(0, 0, 420, 420)
-                const size = sizeInput.valueAsNumber;
-                for (let i = 0; i < size; i++) {
-                    for (let j = 0; j < size; j++) {
-                        const context = canvas.getContext('2d');
-                        context.fillStyle = "#DDD";
-                        context.fillRect(gap * (i + 1) + maxSize / size, gap * (j + 1) + maxSize / size, maxSize / size, maxSize / size;
-                        //context.fillRect(50, 100 * i + 10 * i, 100, 100);
-                    }
-                }
+            function getPos(x, y) {
+                const pos = {x: 0, y: 0};
+                const cellSize = 480 / size;
+                const automatonSize = 320 / size;
 
-            }*/
+                // Calculate the center position of the cell
+                pos.y = y * cellSize + (cellSize / 2) + environment.getBoundingClientRect().top;
+                pos.x = x * cellSize + (cellSize / 2) + environment.getBoundingClientRect().left;
+
+                // Adjust to account for the automaton's top-left corner positioning
+                pos.y -= automatonSize / 2;
+                pos.x -= automatonSize / 2;
+
+                return pos;
+            }
         </script>
     </body>
 </html>

@@ -27,13 +27,13 @@ function initCanvas() {
     var size = sizeInput.valueAsNumber;
     // gap and maxSize variables are used but not defined
     var gap = 5; // Assuming a value, replace with your actual gap
-    var maxSize = 400; // Assuming a value, replace with your actual maxSize
+    var maxSize = 420; // Assuming a value, replace with your actual maxSize
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             // No need to get context again in each loop iteration
             context.fillStyle = "#DDD";
-            context.fillRect(gap * 2.5 + maxSize / size * i, // Modified for correct grid positioning
-            gap * 2.5 + maxSize / size * j, // Modified for correct grid positioning
+            context.fillRect(maxSize / size * i, // Modified for correct grid positioning
+            maxSize / size * j, // Modified for correct grid positioning
             maxSize / size - gap, maxSize / size - gap); // Missing closing parenthesis
             //context.fillRect(50, 100 * i + 10 * i, 100, 100);
         }

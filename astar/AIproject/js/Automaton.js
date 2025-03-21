@@ -1,3 +1,4 @@
+const SQRT2 = Math.sqrt(2);
 class Automaton{
 
     expandable = [];
@@ -36,6 +37,34 @@ class Automaton{
         }
         y -= 2;
         if(y >= 0){
+            if(!this.env.underObstacle(x, y)){
+                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+            }
+        }
+
+        y += 1; //tornato al punto di partenza.
+
+        x++;
+        y++;
+        if(x < this.env.width && y < this.env.height){
+            if(!this.env.underObstacle(x, y)){
+                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+            }
+        }
+        x -= 2;
+        if(x >= 0 && y < this.env.height){
+            if(!this.env.underObstacle(x, y)){
+                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+            }
+        }
+        y -= 2;
+        if(x > 0 && y > 0){
+            if(!this.env.underObstacle(x, y)){
+                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+            }
+        }
+        x += 2;
+        if(y >= 0 && x < this.env.width){
             if(!this.env.underObstacle(x, y)){
                 successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
             }
@@ -83,33 +112,51 @@ class Automaton{
         return posMinF;
     }
 
-    aStar(){
+    aStar() {
         this.expandable.push(new State(this.initalX, this.initialY, 0, this.heuristic(this.initalX, this.initialY), null));
-        do{
+
+        const step = () => {
+            if (this.expandable.length === 0) return; // Exit if no more nodes to expand
+
             let posMinF = this.getPosLowestF();
-            if(this.expandable[posMinF].h == 0){
+            if (this.expandable[posMinF].h === 0) {
                 let path = [];
                 let state = this.expandable[posMinF];
 
-                while(state.previous != null){
+                while (state.previous != null) {
                     path.push(state);
                     state = state.previous;
                 }
 
                 return path.reverse();
             }
+
             let successors = this.getSuccessors(this.expandable[posMinF]);
             this.expanded.push(this.expandable[posMinF]);
             this.expandable.splice(posMinF, 1);
             this.expandable = this.expandable.concat(successors);
-        }while(this.expandable.length > 0);
-        return [];
+
+            // Color the nodes
+            for (const node of this.expandable) {
+                this.color(node.x, node.y, "#FFA");
+            }
+            for (const node of this.expanded) {
+                this.color(node.x, node.y, "#FAF");
+            }
+
+            setTimeout(step, 50);
+        };
+
+        step(); // Start the first step
     }
 
     heuristic(stateX, stateY){
-        return Math.abs(stateX - this.goalX) + 
-        Math.abs(stateY - this.goalY);
+        console.log(SQRT2 * Math.min(stateX - this.goalX, stateY - this.goalX) + Math.abs((stateX - this.goalX) - (stateY - this.goalY)))
+        return Math.abs(stateX - this.goalX) + Math.abs(stateY - this.goalY);
     }
 
-
+    color(posX, posY, color){
+        try{ document.getElementById(posX + " " + posY).style.background = color } catch {}
+        console.log(`${posX} ${posY} ${color}`)
+    }
 }

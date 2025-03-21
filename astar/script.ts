@@ -30,7 +30,7 @@ function initCanvas() { // Missing () after function name
 
     // gap and maxSize variables are used but not defined
     const gap = 5; // Assuming a value, replace with your actual gap
-    const maxSize = 400; // Assuming a value, replace with your actual maxSize
+    const maxSize = 420; // Assuming a value, replace with your actual maxSize
 
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {

@@ -1,4 +1,4 @@
-class Environment{
+class Evironment{
 
     obstacles = [];
 
