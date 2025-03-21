@@ -46,3 +46,14 @@ function movePanels(){
         items.item(i).style.transform = "perspective(50px) rotateX(".concat((rotX + rot).toString(), "deg) rotateY(").concat(rotY.toString(), "deg)");
     }
 }
+
+for (let i = 0; i < document.getElementsByClassName("dropdown").length; i++){
+    const dropdown = document.getElementsByClassName("dropdown")[i];
+    dropdown.getElementsByTagName("div")[0].style.display = "none";
+    dropdown.getElementsByTagName("div")[0].style.position = "absolute";
+    dropdown.addEventListener("click", ()=>{
+        dropdown.getElementsByTagName("div")[0].style.display = "flex";
+        dropdown.getElementsByTagName("div")[0].style.top = (mouseY + document.body.getBoundingClientRect()) + "px";
+        dropdown.getElementsByTagName("div")[0].style.left = mouseX + "px";
+    });
+}

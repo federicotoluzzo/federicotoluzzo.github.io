@@ -30,44 +30,41 @@
             Federico Toluzzo
         </footer>
         <script>
-            document.getElementById("start").addEventListener("click", walkPath);
             document.addEventListener("DOMContentLoaded", initEnvironment);
             document.getElementById("size").addEventListener("input", initEnvironment);
-
             const sizeInput = document.querySelector("input");
-            let size;
 
+            let size;
             const automaton = document.getElementById("automaton");
 
             const environment = document.getElementById("env");
+
             let env = new Evironment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
             let auto = new Automaton(0, 0, env, 9, 9);
             env.addObstacle(new Obstacle(6, 2, 1, 8));
             env.addObstacle(new Obstacle(3, 0, 1, 8));
-            function walkPath() {
+            function walkPath(path) {
                 automaton.style.top = getPos(auto.initalX, auto.initialY).y + "px"
-                automaton.style.left = getPos(auto.initialX, auto.initialY).x + "px"
+                automaton.style.left = getPos(auto.initalX, auto.initialY).x + "px"
                 env = new Evironment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
-                env.addObstacle(new Obstacle(6, 2, 1, 8));
-                env.addObstacle(new Obstacle(3, 0, 1, 8));
+                env.addObstacle(new Obstacle(6, 1, 1, 8));
+                env.addObstacle(new Obstacle(2, 0, 1, 8));
                 auto = new Automaton(0, 0, env, size - 1, size - 1);
                 initEnvironment()
                 //env.addObstacle(new Obstacle(7, 0, 1, 8));
-                const path = auto.aStar();
                 console.log(path)
                 for (let i = 0; i < path.length; i++) {
-                    console.log("test")
                     setTimeout(() => {
-                        console.log("debug")
                         try{
                             document.getElementById(path[i].x + " " + path[i].y).style.background = "#AFF"
                         } catch {}
                         automaton.style.top = getPos(path[i].x, path[i].y).y + "px"
                         automaton.style.left = getPos(path[i].x, path[i].y).x + "px"
-                    }, i * 500);
+                    }, i * 200);
                 }
             }
             function initEnvironment(){
+
                 size = sizeInput.valueAsNumber
                 automaton.style.top = getPos(0, 0).y.toString() + "px";
                 automaton.style.left = getPos(0, 0).x.toString() + "px";
@@ -100,22 +97,21 @@
                     }
                 }
             }
-
             function getPos(x, y) {
+
                 const pos = {x: 0, y: 0};
                 const cellSize = 480 / size;
                 const automatonSize = 320 / size;
 
-                // Calculate the center position of the cell
                 pos.y = y * cellSize + (cellSize / 2) + environment.getBoundingClientRect().top;
                 pos.x = x * cellSize + (cellSize / 2) + environment.getBoundingClientRect().left;
 
-                // Adjust to account for the automaton's top-left corner positioning
                 pos.y -= automatonSize / 2;
                 pos.x -= automatonSize / 2;
-
                 return pos;
+
             }
+            document.getElementById("start").addEventListener("click", () => {auto.aStar(walkPath)});
         </script>
     </body>
 </html>
