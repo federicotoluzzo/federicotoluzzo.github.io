@@ -38,3 +38,16 @@ function movePanels() {
         items.item(i).style.transform = "perspective(50px) rotateX(".concat((rotX + rot).toString(), "deg) rotateY(").concat(rotY.toString(), "deg)");
     }
 }
+var _loop_1 = function (i) {
+    var dropdown = document.getElementsByClassName("dropdown")[i];
+    dropdown.getElementsByTagName("div")[0].style.display = "none";
+    dropdown.getElementsByTagName("div")[0].style.position = "absolute";
+    dropdown.addEventListener("click", function () {
+        dropdown.getElementsByTagName("div")[0].style.display = "flex";
+        dropdown.getElementsByTagName("div")[0].style.top = (mouseY + document.body.getBoundingClientRect()) + "px";
+        dropdown.getElementsByTagName("div")[0].style.left = mouseX + "px";
+    });
+};
+for (var i = 0; i < document.getElementsByClassName("dropdown").length; i++) {
+    _loop_1(i);
+}

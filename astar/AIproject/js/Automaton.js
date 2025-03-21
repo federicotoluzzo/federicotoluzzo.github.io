@@ -48,25 +48,25 @@ class Automaton{
         y++;
         if(x < this.env.width && y < this.env.height){
             if(!this.env.underObstacle(x, y)){
-                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+                successors.push(new State(x, y, state.g + SQRT2, this.heuristic(x, y), state));
             }
         }
         x -= 2;
         if(x >= 0 && y < this.env.height){
             if(!this.env.underObstacle(x, y)){
-                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+                successors.push(new State(x, y, state.g + SQRT2, this.heuristic(x, y), state));
             }
         }
         y -= 2;
         if(x > 0 && y > 0){
             if(!this.env.underObstacle(x, y)){
-                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+                successors.push(new State(x, y, state.g + SQRT2, this.heuristic(x, y), state));
             }
         }
         x += 2;
         if(y >= 0 && x < this.env.width){
             if(!this.env.underObstacle(x, y)){
-                successors.push(new State(x, y, state.g + 1, this.heuristic(x, y), state));
+                successors.push(new State(x, y, state.g + SQRT2, this.heuristic(x, y), state));
             }
         }
 
@@ -112,14 +112,13 @@ class Automaton{
         return posMinF;
     }
 
-    aStar() {
+    aStar(func) { // non saprei come farlo quindi facciamo che passa l'array a una funzione come parametro
         this.expandable.push(new State(this.initalX, this.initialY, 0, this.heuristic(this.initalX, this.initialY), null));
-
-        const step = () => {
-            if (this.expandable.length === 0) return; // Exit if no more nodes to expand
+        const step = (func) => {
+            if (this.expandable.length === 0) return;
 
             let posMinF = this.getPosLowestF();
-            if (this.expandable[posMinF].h === 0) {
+            if (this.expandable[posMinF].h === 0.0) {
                 let path = [];
                 let state = this.expandable[posMinF];
 
@@ -128,7 +127,11 @@ class Automaton{
                     state = state.previous;
                 }
 
-                return path.reverse();
+                func(path.reverse());
+                console.log("test")
+                console.log(func)
+                console.log("test2")
+                return;
             }
 
             let successors = this.getSuccessors(this.expandable[posMinF]);
@@ -144,10 +147,9 @@ class Automaton{
                 this.color(node.x, node.y, "#FAF");
             }
 
-            setTimeout(step, 50);
+            setTimeout(() => {step(func)}, 50);
         };
-
-        step(); // Start the first step
+        step(func);
     }
 
     heuristic(stateX, stateY){
