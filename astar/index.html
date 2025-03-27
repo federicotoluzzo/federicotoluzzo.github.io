@@ -47,8 +47,8 @@
                 automaton.style.top = getPos(auto.initalX, auto.initialY).y + "px"
                 automaton.style.left = getPos(auto.initalX, auto.initialY).x + "px"
                 env = new Evironment(sizeInput.valueAsNumber, sizeInput.valueAsNumber);
-                env.addObstacle(new Obstacle(6, 1, 1, 8));
-                env.addObstacle(new Obstacle(2, 0, 1, 8));
+                env.addObstacle(new Obstacle(6, 2, 1, 8));
+                env.addObstacle(new Obstacle(3, 0, 1, 8));
                 auto = new Automaton(0, 0, env, size - 1, size - 1);
                 initEnvironment()
                 //env.addObstacle(new Obstacle(7, 0, 1, 8));
@@ -102,9 +102,11 @@
                 const pos = {x: 0, y: 0};
                 const cellSize = 480 / size;
                 const automatonSize = 320 / size;
+                // Calculate the center position of the cell
 
                 pos.y = y * cellSize + (cellSize / 2) + environment.getBoundingClientRect().top;
                 pos.x = x * cellSize + (cellSize / 2) + environment.getBoundingClientRect().left;
+                // Adjust to account for the automaton's top-left corner positioning
 
                 pos.y -= automatonSize / 2;
                 pos.x -= automatonSize / 2;
