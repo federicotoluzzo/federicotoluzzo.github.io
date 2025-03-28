@@ -9,7 +9,7 @@ class State{
 
     g(){
         if(previous != null){
-            return this.previous.g() + 1;
+            return this.previous.g() + (Math.abs(this.previous.x - this.x) + Math.abs(this.previous.y - this.y)) > 1 ? SQRT2 : 1;
         }
         return 0;
     }
