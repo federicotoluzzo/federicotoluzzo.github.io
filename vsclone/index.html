@@ -93,6 +93,14 @@
         <div class="pause">
             Pause
         </div>
+        <div class="dropdown">
+            Menu
+            (cliccami)
+            <div class="dropdown-content">
+                Mi hai cliccato!<br>
+                Per chiudere il menu, <br>clicca di nuovo <br>o muovi il cursore <br>fuori dal riquadro.
+            </div>
+        </div>
         <!-- (footer) -->
         <div id="footer">
             <ul>
@@ -151,5 +159,6 @@
         <script>
             document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
         </script>
+        <script src="dropdown.js"></script>
     </body>
 </html>
