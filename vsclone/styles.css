@@ -269,3 +269,15 @@ body div video{
     box-shadow: 0 0 10px black;
     backdrop-filter: blur(5px); /* sfoca lo sfondo dietro al div*/
 }
+
+form{
+    width: fit-content;
+    margin-inline: auto;
+    padding: 5vw;
+    background: #444;
+    display: flex;
+    border-radius: 5vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
