@@ -68,9 +68,11 @@
         </label>
         <label>
           Do you want to sign up for our newsletter? :
-          <input type="checkbox" checked disabled>
+          <input type="checkbox" name="newsletter" checked disabled>
         </label>
-        <input type="button" value="submit">
+        <select name="prefix"></select>
+        <input type="range" name="number" min="0" max="9999999999">
+        <input type="button" value="submit" onclick="confirm()">
         <div>
           <p>Are you sure about that?</p>
           <img src="cena.gif" style="width: 64px; margin-inline:auto; display: flex;">
@@ -133,10 +135,9 @@
       </ul>
     </div>
 
-    <!-- Non abbiamo ancora fatto js, ma sembrava peccato non mettere questo -->
     <script>
       document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
     </script>
-    <script src="dropdown.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
