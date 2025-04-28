@@ -61,7 +61,7 @@
     </div>
 
     <div style="margin-top: 150px">
-      <form>
+      <form id="form">
         <label>
           Email :
           <input name="email" type="email" placeholder="example@mail.com">
@@ -72,12 +72,9 @@
         </label>
         <select name="prefix"></select>
         <input type="range" name="number" min="0" max="9999999999">
+        <p id="pn_preview"></p>
+        <div id="preview" style="display:none; padding: 10px;"></div>
         <input type="button" value="submit" onclick="confirm()">
-        <div>
-          <p>Are you sure about that?</p>
-          <img src="cena.gif" style="width: 64px; margin-inline:auto; display: flex;">
-          <input type="button" value="actually submit">
-        </div>
       </form>
     </div>
 
