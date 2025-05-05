@@ -218,7 +218,8 @@ body div video{
 }
 
 #footer{
-    width: 100%;
+    width: 100vw;
+    left: 0;
     height: 100px;
     padding: 50px 50px;
 }
@@ -246,7 +247,6 @@ body div video{
     text-decoration: none;
     color: #9BA3B4;
 }
-
 
 .dropdown{
     margin-inline: auto;
