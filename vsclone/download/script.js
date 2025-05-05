@@ -23,7 +23,9 @@ function confirm(){
                 if(values[key] != previousValues[key]){
                     return false;
                 }
-            }catch{}
+            }catch{
+                return false;
+            }
         }
         return true;
     }

@@ -273,11 +273,57 @@ body div video{
 form{
     width: fit-content;
     margin-inline: auto;
-    padding: 5vw;
-    background: #444;
+    padding: 20px;
+    background: #FFF1;
+    border: 1px solid #FFF2;
     display: flex;
-    border-radius: 5vw;
+    border-radius: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 100ms;
+}
+
+form:hover{
+    border: 1px solid #FFF3;
+}
+
+.email{
+    background: transparent;
+    border: 1px solid #FFF1;
+    border-radius: 20px;
+    padding: 10px;
+    color: #FFFC;
+    transition: all 500ms;
+}
+
+.email:focus{
+    border-radius: 5px;
+}
+
+select{
+    border-radius: 9999px;
+    background: #CAF2;
+    border: none;
+    color: #FFF8;
+    margin: 20px;
+}
+
+.submit{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #FFF1;
+    background: #CAF2;
+    font-weight: 900;
+    color: #FFF8;
+    transition: all 200ms;
+}
+
+.submit:hover{
+    cursor: pointer;
+    transform: scale(120%);
+}
+
+.submit:active{
+    transform: scale(90%);
 }
