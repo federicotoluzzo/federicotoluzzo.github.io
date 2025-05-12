@@ -1,4 +1,6 @@
 const API_URL = "https://api.open-meteo.com/v1/forecast?latitude=37.41166992482408&longitude=-122.07110349078079&current=temperature_2m,rain,wind_speed_10m,wind_direction_10m,is_day,relative_humidity_2m&timezone=auto&forecast_days=1";
+const JSON_URL = "/example.json";
+
 fetch(API_URL).then((response)=>{
     response.json().then((json)=>{
         document.getElementById("public").innerHTML = "<h4>Weather in our headquarters</h4>";
@@ -13,3 +15,10 @@ fetch(API_URL).then((response)=>{
         document.getElementById("public").innerHTML += "<br><br><div style='display: flex; flex-direction: column; align-items: center;'><img style='aspect-ratio: 1; width: 50px; filter: drop-shadow(0px 0px 15px red); transform: rotate(" + json["current"]["wind_direction_10m"] + "deg);' src='https://static.thenounproject.com/png/306629-200.png'>" + json["current"]["wind_speed_10m"] + json["current_units"]["wind_speed_10m"] + "</div>"
     });
 })
+
+fetch(JSON_URL).then((response)=>{
+    response.json().then((json)=>{
+
+    });
+})
+
