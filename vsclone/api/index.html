@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+  <body>
+    <!-- Sarebbe decisamente più opportuno usare un nav, ma svolge la stessa funzione e visto come è andato l'altro compito meglio non dare per scontato nulla -->
+    <div id="nav">
+      <!-- I link portano al sito originale -->
+      <a href="/vsclone" style="text-decoration: none">
+        <img src="../logo.png" id="logo">
+        <span id="logo-text">Visual Studio Code</span>
+      </a>
+      <ul>
+        <li>
+          <a href="https://code.visualstudio.com/docs">
+            Docs
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/updates">
+            Updates
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/blogs">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/api">
+            API
+          </a>
+        </li>
+        <li>
+          <a href="https://marketplace.visualstudio.com/VSCode">
+            Extensions
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/docs/supporting/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/docs/copilot/overview">
+            GitHub Copilot
+          </a>
+        </li>
+      </ul>
+      <button id="theme">
+        <img src="https://code.visualstudio.com/assets/icons/theme-light.svg">
+      </button>
+      <div id="search">
+        <img src="https://code.visualstudio.com/assets/icons/search-dark.svg">
+        <input type="text" placeholder="Search Docs">
+      </div>
+      <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" href="/vsclone/download">Download</a>
+    </div>
+
+    <div style="height: 58px"></div>
+
+    <div style="display:flex; flex-direction: column; align-items: center">
+      <div>
+        <h3>Public API</h3>
+        <div id="public"></div>
+      </div>
+      <div>
+        <h3>JSON file</h3>
+      </div>
+    </div>
+
+
+    <!-- (footer) -->
+    <div id="footer">
+      <ul>
+        <li>
+          <a href="https://go.microsoft.com/fwlink/?LinkID=533687">
+            <img src="https://code.visualstudio.com/assets/icons/x-icon.svg" style="width: 18px; margin-bottom: 3.5px;">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/microsoft/vscode">
+            <img src="https://code.visualstudio.com/assets/icons/github-icon.svg">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@code">
+            <img src="https://code.visualstudio.com/assets/icons/youtube-icon.svg">
+          </a>
+        </li>
+        <li style="position: absolute; right: 50px;">
+          <a href="https://www.microsoft.com/">
+            <img src="https://code.visualstudio.com/assets/icons/microsoft.svg">
+          </a>
+        </li>
+      </ul>
+      <br>
+      <ul>
+        <li>
+          <a href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d66407ed-3967-b000-4cfb-2c318cad363d">
+            Support
+          </a>
+        </li>
+        <li>
+          <a href="https://go.microsoft.com/fwlink/?LinkId=521839">
+            Privacy
+          </a>
+        </li>
+        <li>
+          <a>
+            Manage Cookies
+          </a>
+        </li>
+        <li>
+          <a href="https://www.microsoft.com/legal/terms-of-use">
+            Terms of Use
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/License">
+            License
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Non abbiamo ancora fatto js, ma sembrava peccato non mettere questo -->
+    <script>
+      document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
