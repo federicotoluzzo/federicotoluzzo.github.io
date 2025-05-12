@@ -5,8 +5,23 @@
     "salary": 0
   },
   {
-    "name": "Federico",
-    "surname": "Toluzzo",
-    "salary": 0
+    "name": "Salem",
+    "surname": "Techsperts",
+    "salary": 2000
+  },
+  {
+    "name": "Tyler",
+    "surname": "Blevins",
+    "salary": 2600
+  },
+  {
+    "name": "Mirko",
+    "surname": "Alessandrini",
+    "salary": 2200
+  },
+  {
+    "name": "Willie",
+    "surname": "Maxwell II",
+    "salary": 1738
   }
 ]
