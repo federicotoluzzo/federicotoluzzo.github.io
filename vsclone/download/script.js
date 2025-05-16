@@ -49,10 +49,11 @@ function confirm(){
     const phoneNumberPreview = document.createElement("p");
     phoneNumberPreview.innerHTML = "Phone number : +" + values["prefix"] + " " + values["number"];
 
-
     preview.appendChild(emailPreview)
     preview.appendChild(newsletterPreview)
     preview.appendChild(phoneNumberPreview)
+
+    form.style.display = "none";
 }
 
 function initSelect(){
