@@ -9,7 +9,7 @@
     <!-- Sarebbe decisamente più opportuno usare un nav, ma svolge la stessa funzione e visto come è andato l'altro compito meglio non dare per scontato nulla -->
     <div id="nav">
       <!-- I link portano al sito originale -->
-      <a href="/vsclone" style="text-decoration: none">
+      <a onclick="loadHomepage()" style="text-decoration: none">
         <img src="../logo.png" id="logo">
         <span id="logo-text">Visual Studio Code</span>
       </a>
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="/vsclone/api">
+          <a onclick="loadAPI()">
             API
           </a>
         </li>
@@ -57,7 +57,7 @@
         <img src="https://code.visualstudio.com/assets/icons/search-dark.svg">
         <input type="text" placeholder="Search Docs">
       </div>
-      <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" href="/vsclone/download">Download</a>
+      <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" onclick="loadDownloads()">Download</a>
     </div>
 
     <div style="height: 58px"></div>
@@ -68,7 +68,7 @@
         <div id="public"></div>
       </div>
       <div>
-        <h3 onclick="switchDisplay()">Static file</h3>
+        <h3>Static file</h3>
         <div id="static"></div>
       </div>
     </div>
@@ -132,6 +132,7 @@
     <script>
       document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
     </script>
-    <script src="/vsclone/api/script.js"></script>
+    <script src="../api/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

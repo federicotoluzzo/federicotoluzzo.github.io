@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>API</title>
+    <title>Visual Studio Clone - Code Editing. Redefined</title>
     <link rel="stylesheet" href="../styles.css">
-</head>
-  <body>
+  </head>
+  <body style="width: 100%;">
     <!-- Sarebbe decisamente più opportuno usare un nav, ma svolge la stessa funzione e visto come è andato l'altro compito meglio non dare per scontato nulla -->
     <div id="nav">
       <!-- I link portano al sito originale -->
-      <a href="/vsclone" style="text-decoration: none">
+      <a onclick="loadHomepage()" style="text-decoration: none">
         <img src="../logo.png" id="logo">
         <span id="logo-text">Visual Studio Code</span>
       </a>
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="/vsclone/api">
+          <a onclick="loadAPI()">
             API
           </a>
         </li>
@@ -57,22 +57,26 @@
         <img src="https://code.visualstudio.com/assets/icons/search-dark.svg">
         <input type="text" placeholder="Search Docs">
       </div>
-      <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" href="/vsclone/download">Download</a>
+      <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" onclick="loadDownloads()">Download</a>
     </div>
 
-    <div style="height: 58px"></div>
-
-    <div style="display:flex; flex-direction: column; align-items: center">
-      <div>
-        <h3>Public API</h3>
-        <div id="public"></div>
-      </div>
-      <div>
-        <h3 onclick="switchDisplay()">Static file</h3>
-        <div id="static"></div>
-      </div>
+    <div style="margin-top: 150px">
+      <form id="form">
+        <label>
+          Email :
+          <input class="email" name="email" type="email" placeholder="example.address@mail.com">
+        </label>
+        <label>
+          Do you want to sign up for our newsletter? :
+          <input type="checkbox" name="newsletter" checked disabled>
+        </label>
+        <select name="prefix"></select>
+        <input type="range" name="number" min="0" max="9999999999">
+        <p id="pn_preview"></p>
+        <input class="submit" type="button" value="submit" onclick="confirm()">
+      </form>
+      <div id="preview" style="display:none; padding: 10px; margin-inline: auto; width: fit-content;"></div>
     </div>
-
 
     <!-- (footer) -->
     <div id="footer">
@@ -128,10 +132,9 @@
       </ul>
     </div>
 
-    <!-- Non abbiamo ancora fatto js, ma sembrava peccato non mettere questo -->
     <script>
       document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
     </script>
-    <script src="/vsclone/api/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

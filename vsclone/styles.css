@@ -327,3 +327,7 @@ select{
 .submit:active{
     transform: scale(90%);
 }
+
+a:hover{
+    cursor: pointer;
+}

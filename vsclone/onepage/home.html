@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Visual Studio Clone - Code Editing. Redefined</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <!-- Sarebbe decisamente più opportuno usare un nav, ma svolge la stessa funzione e visto come è andato l'altro compito meglio non dare per scontato nulla -->
+        <div id="nav">
+            <!-- I link portano al sito originale -->
+            <a onclick="loadHomepage()" style="text-decoration: none">
+                <img src="logo.png" id="logo">
+                <span id="logo-text">Visual Studio Code</span>
+            </a>
+            <ul>
+                <li>
+                    <a href="https://code.visualstudio.com/docs">
+                        Docs
+                    </a>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/updates">
+                        Updates
+                    </a>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/blogs">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a onclick="loadAPI()">
+                        API
+                    </a>
+                </li>
+                <li>
+                    <a href="https://marketplace.visualstudio.com/VSCode">
+                        Extensions
+                    </a>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/docs/supporting/faq">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/docs/copilot/overview">
+                        GitHub Copilot
+                    </a>
+                </li>
+            </ul>
+            <button id="theme">
+                <img src="https://code.visualstudio.com/assets/icons/theme-light.svg">
+            </button>
+            <div id="search">
+                <img src="https://code.visualstudio.com/assets/icons/search-dark.svg">
+                <input type="text" placeholder="Search Docs">
+            </div>
+            <a class="blue-button" style="padding: 8px 16px; font-size: 16px; text-decoration: none;" onclick="loadDownloads()">Download</a>
+        </div>
+        <!-- ci andrebbe il <main> -->
+        <!-- spaziatore -->
+        <div style="height: 58px"></div>
+        <div>
+            <h1>Your code editor. <br>Redefined with AI.</h1>
+            <div class="center">
+                <a class="blue-button">
+                    <div class="center">
+                        <img src="https://code.visualstudio.com/assets/icons/download.svg">
+                        .deb
+                    </div>
+                    <p>Debian, Ubuntu...</p>
+                </a>
+                <a class="blue-button">
+                    <div class="center">
+                        <img src="https://code.visualstudio.com/assets/icons/download.svg">
+                        .rpm
+                    </div>
+                    <p>Red Hat, Fedora...</p>
+                </a>
+                <a id="copilot">
+                    Get Copilot Free
+                </a>
+            </div>
+            <p class="center" style="margin-top: 8px; font-size: 12px;"><a class="tiny-link">Web</a>, <a class="tiny-link">Insiders edition</a>, or <a class="tiny-link">other platforms</a></p>
+            <p class="center" style="margin-top: 12px; font-size: 12px;">By using VS Code, you agree to its <a class="tiny-link" style="color: #9BA3B4;">license</a> and <a style="color: #9BA3B4;" class="tiny-link">privacy statement</a>.</p>
+        </div>
+        <div class="center" style="margin-top: 50px;">
+            <img id="background" src="https://code.visualstudio.com/assets/home/hero-background.webp">
+            <video style="margin-inline: auto;" src="https://code.visualstudio.com/assets/home/hero-dark-lg.webm" autoplay muted></video>
+        </div>
+        <div class="pause">
+            Pause
+        </div>
+        <div class="dropdown">
+            Menu
+            (cliccami)
+            <div class="dropdown-content">
+                Mi hai cliccato!<br>
+                Per chiudere il menu, <br>clicca di nuovo <br>o muovi il cursore <br>fuori dal riquadro.
+            </div>
+        </div>
+        <!-- (footer) -->
+        <div id="footer">
+            <ul>
+                <li>
+                    <a href="https://go.microsoft.com/fwlink/?LinkID=533687">
+                        <img src="https://code.visualstudio.com/assets/icons/x-icon.svg" style="width: 18px; margin-bottom: 3.5px;">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/microsoft/vscode">
+                        <img src="https://code.visualstudio.com/assets/icons/github-icon.svg">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@code">
+                        <img src="https://code.visualstudio.com/assets/icons/youtube-icon.svg">
+                    </a>
+                </li>
+                <li style="position: absolute; right: 50px;">
+                    <a href="https://www.microsoft.com/">
+                        <img src="https://code.visualstudio.com/assets/icons/microsoft.svg">
+                    </a>
+                </li>
+            </ul>
+            <br>
+            <ul>
+                <li>
+                    <a href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d66407ed-3967-b000-4cfb-2c318cad363d">
+                        Support
+                    </a>
+                </li>
+                <li>
+                    <a href="https://go.microsoft.com/fwlink/?LinkId=521839">
+                        Privacy
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        Manage Cookies
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.microsoft.com/legal/terms-of-use">
+                        Terms of Use
+                    </a>
+                </li>
+                <li>
+                    <a href="https://code.visualstudio.com/License">
+                        License
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Non abbiamo ancora fatto js, ma sembrava peccato non mettere questo -->
+        <script>
+            document.addEventListener("scroll", () => {document.getElementById("nav").style.borderBottom = document.body.getBoundingClientRect().top === 0 ? "none" : "1px solid #333";});
+        </script>
+        <script src="../dropdown.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

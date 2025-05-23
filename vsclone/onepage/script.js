@@ -1,5 +1,5 @@
 function loadHomepage(){
-    fetch("/vsclone").then((response)=>{
+    fetch("/vsclone/onepage/home.html").then((response)=>{
         response.text().then((html)=>{
             document.documentElement.innerHTML = html;
         });
@@ -7,7 +7,7 @@ function loadHomepage(){
 }
 
 function loadDownloads(){
-    fetch("/vsclone/download").then((response)=>{
+    fetch("/vsclone/onepage/download.html").then((response)=>{
         response.text().then((html)=>{
             document.documentElement.innerHTML = html;
         });
@@ -15,7 +15,7 @@ function loadDownloads(){
 }
 
 function loadAPI(){
-    fetch("/vsclone/api").then((response)=>{
+    fetch("/vsclone/onepage/api.html").then((response)=>{
         response.text().then((html)=>{
             document.documentElement.innerHTML = html;
         });
